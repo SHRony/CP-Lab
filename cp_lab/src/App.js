@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import Home from "./Home/Home";
-function App() {
-  return (
-    <div className="App">
-      <Home></Home>
-    </div>
-  );
+class App extends Component{
+
+  render(){
+    return (
+      <div className="App">
+        <Home></Home>
+      </div>
+    )
+  }
 }
 
 export default App;

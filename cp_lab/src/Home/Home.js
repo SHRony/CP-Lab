@@ -1,12 +1,13 @@
 import React from "react";
 import { Component } from "react";
-import Nav from "../Nav/Nav";
+import Nav from "../res/Nav/Nav";
 import './Home.css'
-import homeimage from '../Image/home.svg'
 import WavyText from "../res/WavyText/WavyText";
 import BorderAnimation from "../res/BorderAnimation/BorderAnimation";
 import FadeScroll from "../res/FadeScroll/FadeScroll";
-import contestIllustration from "../Image/contestIllustration.svg"
+import Gallary from "../res/Gallary/Gallary";
+import PieChart from "../res/Charts/PieChart/PieChart.js"
+import CFstat from "../res/CFStat/CFStat";
 class Home extends Component{
     render(){
         return(
@@ -22,7 +23,7 @@ class Home extends Component{
                             </BorderAnimation>
                         </div>
                         <div className="welcome-rht">
-                            <img src={homeimage}/>
+                            <Gallary></Gallary>
                         </div>
 
                     </div>
@@ -33,7 +34,7 @@ class Home extends Component{
                             <WavyText>UpcomingContests</WavyText>
                         </div>
                         <div className="ucRht">
-                            
+                            <CFstat handles = {["Raiden"]}></CFstat>
                         </div>
                     </div>
                 </FadeScroll>
