@@ -30,17 +30,15 @@ class Nav extends Component{
             <div className="Nav">
                 <div className="lft">
 
-                    <a className="btn" href = "#"><img src={logo}></img></a>
+                    <a className="btn" href = "/"><img src={logo}></img></a>
                     <a className="btn" href = "#"><WavyText>Contests</WavyText></a>
                     <a className="btn" href = "#"><WavyText>Users</WavyText></a>
                     <a className="btn" href = "#"><WavyText>Forum</WavyText></a>
                 </div>
                 <div className="rht">
-                    <a className="btn" href = "#" onClick={this.loginreq}><img src={profile_icon}/></a> {/* Onclick temporary for testing purpose */}
-                    <a className="btn" href = "#"><img src = {notification_icon}/></a>
+                    <a className="btn" href = "/profile" ><img src={profile_icon}/></a> {/* Onclick temporary for testing purpose */}
+                    <a className="btn" href = "#" onClick={this.loginreq}><img src = {notification_icon}/></a>
                 </div>
-                
-
             </div>
         );
     }

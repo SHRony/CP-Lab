@@ -1,10 +1,15 @@
 .WavyText{
     height: fit-content;
     width: fit-content;
+    cursor: default;
+}
+a .WavyText{
+  cursor: pointer;
 }
 .WavyText span{
     height: fit-content;
     width: fit-content;
+    min-width: 5px;
 }
 .WavyText:hover span{
     display: inline-block;

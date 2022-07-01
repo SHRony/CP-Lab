@@ -1,9 +1,9 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import React, { Component } from 'react';
-import "./PieChart.css"
+import "./DoughnutChart.css"
 ChartJS.register(ArcElement, Tooltip, Legend);
-class PieChart extends Component{
+class DoughnutChart extends Component{
     state = {
         data : {}
     }
@@ -24,10 +24,10 @@ class PieChart extends Component{
     }
     render(){
         return(
-            <div className='PieChart'>
-                <Pie data = {this.state.data}/>
+            <div className='DoughnutChart'>
+                <Doughnut data = {this.state.data}/>
             </div>
         )
     }
 }
-export default PieChart;
+export default DoughnutChart;

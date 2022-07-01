@@ -1,14 +1,16 @@
 
 .Nav{
     z-index: -2px;
-    background-color: #fafafa;
+    background-color: #ffffff;
     height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 15px;
     padding-right: 15px;
+    border-bottom: 1px solid silver;
 }
+
 .lft{
     display: flex;
     flex-direction: row;

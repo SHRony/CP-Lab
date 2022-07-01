@@ -1,25 +1,18 @@
-import React, { Component } from 'react';
-import "./BarChart.css"
+import {React,Component} from 'react';
 import {
   Chart as ChartJS,
-  CategoryScale,
   LinearScale,
-  BarElement,
-  Title,
+  PointElement,
+  LineElement,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-class BarChart extends Component{
+import "./ScatterChart.css"
+ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
+
+class ScatterChart extends Component{
     state = {
         data : {}
     }
@@ -27,8 +20,9 @@ class BarChart extends Component{
         super(props);
         
         this.state = {
-            data :  props.data
+            data : props.data,
         };
+        console.log(props);
     }
     componentDidUpdate(prevProps) {
         if (prevProps.data !== this.props.data) {
@@ -39,10 +33,10 @@ class BarChart extends Component{
     }
     render(){
         return(
-            <div className='BarChart'>
-                <Bar data = {this.state.data}/>
+            <div className='ScatterChart'>
+                <Scatter data = {this.state.data}/>
             </div>
         )
     }
 }
-export default BarChart;
+export default ScatterChart;
