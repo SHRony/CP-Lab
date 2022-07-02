@@ -3,6 +3,8 @@ import Home from "./Home/Home";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Nav from "./res/Nav/Nav";
 import CFstat from "./res/CFStat/CFStat";
+import Registratration from "./Registration/Registration";
+import CFViz from "./CFViz/CFViz";
 class App extends Component{
 
   render(){
@@ -12,7 +14,10 @@ class App extends Component{
           <Nav></Nav>
           <Routes>
             <Route path = "/" element = {<Home></Home>} />
-            <Route path="/profile" element = {<CFstat handles = {["Alfeh"]}></CFstat>} />
+            <Route path="/profile" element = {<CFstat handles = {["Raiden"]}></CFstat>} />
+            <Route path="/registration" element = {<Registratration></Registratration>} />
+            <Route path="/cfviz" element = {<CFViz></CFViz>} />
+
           </Routes>
         </div>
       </Router>

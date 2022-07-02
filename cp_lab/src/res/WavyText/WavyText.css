@@ -5,6 +5,7 @@
 }
 a .WavyText{
   cursor: pointer;
+  text-decoration: inherit;
 }
 .WavyText span{
     height: fit-content;

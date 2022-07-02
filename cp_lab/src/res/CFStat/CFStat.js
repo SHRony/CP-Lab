@@ -40,7 +40,7 @@ class CFstat extends Component{
 
         }
     }
-    async componentDidMount(){
+    async getStat(){
         let data = {
             handles : this.props.handles,
             maxRating : 0,
@@ -109,6 +109,13 @@ class CFstat extends Component{
         data.catCount =  new Map([...data.catCount.entries()].sort((a, b) => b[1] - a[1]));
         console.log(data);
         this.setState(data)
+    }
+    async componentDidMount(){
+        await this.getStat();
+    }
+    async componentDidUpdate(prevProps){
+        if(prevProps.handles != this.props.handles)
+        await this.getStat();
     }
     getVerData = () =>{
         let data = {

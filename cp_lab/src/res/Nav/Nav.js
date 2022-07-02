@@ -12,12 +12,10 @@ class Nav extends Component{
     }
 
 
-    //Temporary for trial
+    //Temporary for testing
     loginreq = ()=>{
         console.log("requested");
-        Axios.post("http://localhost:3001/login",{
-            username : "Raiden"
-        }).then((response) => {
+        Axios.post("http://localhost:3001/registration").then((response) => {
             console.log(response);
         });
     }; 
@@ -34,6 +32,7 @@ class Nav extends Component{
                     <a className="btn" href = "#"><WavyText>Contests</WavyText></a>
                     <a className="btn" href = "#"><WavyText>Users</WavyText></a>
                     <a className="btn" href = "#"><WavyText>Forum</WavyText></a>
+                    <a className="btn" href = "cfviz"><WavyText>CFViz</WavyText></a>
                 </div>
                 <div className="rht">
                     <a className="btn" href = "/profile" ><img src={profile_icon}/></a> {/* Onclick temporary for testing purpose */}
