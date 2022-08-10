@@ -104,7 +104,7 @@ class CFstat extends Component {
             data.problemsSolved.push(response.data.result[j].problem);
             st.set(response.data.result[j].problem.name, 1);
             if (response.data.result[j].problem.rating == 3000) {
-              console.log(response.data.result[j].problem);
+              // console.log(response.data.result[j].problem);
             }
           }
         }
@@ -134,7 +134,7 @@ class CFstat extends Component {
     data.catCount = new Map(
       [...data.catCount.entries()].sort((a, b) => b[1] - a[1])
     );
-    console.log(data);
+    // console.log(data);
     this.setState(data);
   }
   async componentDidMount() {
@@ -264,7 +264,7 @@ class CFstat extends Component {
           y: submission.problem.rating,
         });
     }
-    console.log(data);
+    // console.log(data);
     return data;
   };
 

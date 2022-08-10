@@ -66,4 +66,44 @@ module.exports = {
       );
     });
   },
+  getHandles: function (username) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT handle FROM cfhandles WHERE username = ?",
+        [username],
+        function (err, result) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(result);
+          }
+        }
+      );
+    });
+  },
+  insertHandle: function (userName, handle) {
+    console.log(handle);
+    return new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO cfhandles (username, handle) VALUES (?, ?)",
+        [userName, handle],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
+  clearHandle: function (userName) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "DELETE FROM cfhandles WHERE username = ?",
+        [userName],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
 };

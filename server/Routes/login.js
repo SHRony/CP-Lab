@@ -16,6 +16,7 @@ router.post("/", (req, res) => {
   let userExists = queries.getlogininfoByUsername(username);
   userExists
     .then(async (result) => {
+      console.log(result);
       if (result.length === 0) {
         res.send("1");
       } else {

@@ -3,7 +3,8 @@ import Form from "../res/Form/Form";
 import WavyText from "../res/WavyText/WavyText";
 import "./Registration.css";
 import Axios from "axios";
-import { storeData, getData, alphanumeric } from "../helper";
+import { storeData, getData, alphanumeric, isLoggedIn } from "../helper";
+import { Navigate } from "react-router-dom";
 class Registratration extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,7 @@ class Registratration extends Component {
     this.emailInp = React.createRef();
     this.phoneInp = React.createRef();
     this.regInp = React.createRef();
+    this.state = { isLoggedIn: 0 };
   }
   checkUsername = () => {
     this.usernameInp.current.setCustomValidity("");
@@ -124,9 +126,24 @@ class Registratration extends Component {
         alert("Error connecting database, try again");
       } else {
         storeData("current_user", response.data);
+        window.location.reload(false);
       }
     });
   };
+  componentDidMount() {
+    isLoggedIn().then((res) => {
+      console.log(res);
+      if (res === 1) {
+        this.setState({
+          isLoggedIn: -1,
+        });
+      } else {
+        this.setState({
+          isLoggedIn: 1,
+        });
+      }
+    });
+  }
   submit = () => {
     if (!this.checkUsername()) return;
     if (!this.checkName()) return;
@@ -144,11 +161,11 @@ class Registratration extends Component {
       password: this.passwordInp.current.value,
       reg: this.regInp.current.value,
     };
-    console.log(user);
     this.regreq(user);
   };
+
   render() {
-    return (
+    let content = (
       <div className="Registration">
         <Form>
           <div className="form-lft">
@@ -243,6 +260,9 @@ class Registratration extends Component {
         </Form>
       </div>
     );
+    if (this.state.isLoggedIn === 1) content = <Navigate to="/" />;
+    else if (this.state.isLoggedIn === 0) content = "";
+    return content;
   }
 }
 export default Registratration;

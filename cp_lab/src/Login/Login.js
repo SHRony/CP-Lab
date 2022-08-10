@@ -3,12 +3,16 @@ import Form from "../res/Form/Form";
 import WavyText from "../res/WavyText/WavyText";
 import "./Login.css";
 import Axios from "axios";
-import { storeData, getData } from "../helper";
+import { storeData, getData, isLoggedIn } from "../helper";
+import { Navigate } from "react-router-dom";
 class Login extends Component {
   constructor(props) {
     super(props);
     this.usernameInp = React.createRef();
     this.passwordInp = React.createRef();
+    this.state = {
+      isLoggedIn: 0,
+    };
   }
   loginReq = (user) => {
     console.log("requested");
@@ -23,6 +27,7 @@ class Login extends Component {
         alert("Error connecting database, try again");
       } else {
         storeData("current_user", response.data);
+        window.location.reload(false);
         console.log(response.data);
       }
     });
@@ -34,8 +39,24 @@ class Login extends Component {
     };
     this.loginReq(user);
   };
+  componentDidMount() {
+    isLoggedIn().then((res) => {
+      console.log(res);
+      if (res === 1) {
+        this.setState({
+          isLoggedIn: -1,
+        });
+      } else {
+        this.setState({
+          isLoggedIn: 1,
+        });
+      }
+    });
+  }
+
   render() {
-    return (
+    console.log(this.state);
+    let content = (
       <div className="Login">
         <Form>
           <div className="form-lft">
@@ -80,6 +101,10 @@ class Login extends Component {
         </Form>
       </div>
     );
+    console.log(this.state.isLoggedIn);
+    if (this.state.isLoggedIn === 1) content = <Navigate to="/" />;
+    else if (this.state.isLoggedIn === 0) content = "";
+    return content;
   }
 }
 export default Login;
