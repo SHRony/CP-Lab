@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   let token = req.body.token;
   let data = helper.decryptData(token, process.env.SECRET_KEY);
+  // console.log(data);
   if (data) res.send(data);
   else res.send("1");
 });

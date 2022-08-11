@@ -34,18 +34,16 @@ router.post("/", (req, res) => {
                     user.name,
                     user.phone
                   );
-                  res.send(
-                    helper.encryptData(
-                      {
-                        userName: user.username,
-                        email: user.email,
-                        name: user.name.name,
-                        phone: user.phone,
-                        reg: user.reg,
-                      },
-                      process.env.SECRET_KEY
-                    )
-                  );
+                  let data = {
+                    userName: user.userName,
+                    email: user.email,
+                    name: user.name.name,
+                    phone: user.phone,
+                    reg: user.reg,
+                  };
+                  console.log("reg is done ****");
+                  console.log(data);
+                  res.send(helper.encryptData(data, process.env.SECRET_KEY));
                 })
                 .catch((err) => {
                   console.log("hashing error");

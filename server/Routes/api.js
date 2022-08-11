@@ -47,7 +47,7 @@ router.post("/getUser", (req, res) => {
           });
       }
     })
-    .catch(() => {
+    .catch((err) => {
       res.send("3");
     });
 });
@@ -61,10 +61,9 @@ router.post("/updateHandles", async (req, res) => {
     handles.forEach((handle) => {
       queries
         .insertHandle(data.userName, handle)
-        .then((res) => {
+        .then((result) => {
           cnt--;
           if (cnt === 0) res.send("1");
-          console.log(cnt);
         })
         .catch((err) => {
           cnt--;

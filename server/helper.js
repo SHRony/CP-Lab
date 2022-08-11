@@ -6,7 +6,9 @@ module.exports = {
     return token;
   },
   decryptData: function (token, key) {
-    let data = jwt.verify(token, key);
+    let data = null;
+    if (token !== null && token !== undefined && token !== "")
+      data = jwt.verify(token, key);
     return data;
   },
   hashPassword: function (password, saltrounds) {
