@@ -41,10 +41,10 @@ module.exports = {
       );
     });
   },
-  insertLoginInfo: function (userName, password, email) {
+  insertLoginInfo: function (userName, password, email, userType) {
     db.query(
-      "INSERT INTO logininfo (username, password , email) VALUES (?, ?, ?)",
-      [userName, password, email]
+      "INSERT INTO logininfo (username, password , email , userType) VALUES (?, ?, ?, ?)",
+      [userName, password, email, userType]
     );
   },
   insertStudentInfo: function (userName, reg, name, phone) {
@@ -53,6 +53,16 @@ module.exports = {
       [userName, reg, name, phone]
     );
   },
+
+  insertMentorInfo: function (userName, name, phone) {
+    console.log("yo mentor yo");
+    db.query("INSERT INTO mentor (username, name, phoneNo) VALUES (?, ?, ?)", [
+      userName,
+      name,
+      phone,
+    ]);
+  },
+
   getStudentInfo: function (username) {
     return new Promise((resolve, reject) => {
       db.query(
@@ -68,6 +78,33 @@ module.exports = {
       );
     });
   },
+  getStudents: function (username) {
+    return new Promise((resolve, reject) => {
+      db.query("SELECT * FROM student", function (err, result) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  },
+  getMentorInfo: function (username) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM mentor WHERE username = ?",
+        [username],
+        function (err, result) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(result);
+          }
+        }
+      );
+    });
+  },
+
   getHandles: function (username) {
     return new Promise((resolve, reject) => {
       db.query(
@@ -201,6 +238,45 @@ module.exports = {
       db.query(
         "SELECT * FROM replies WHERE parent = ? ORDER BY id DESC",
         [par],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
+  addNationalContest: function (name, time) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO nationalcontests (name,time) VALUES (? , ?)",
+        [name, time],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
+  getNationalContest: function (id) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM nationalcontests WHERE id = ?",
+        [id],
+        (err, result) => {
+          if (err) {
+            reject(err);
+            console.log(err);
+          } else {
+            resolve(result);
+          }
+        }
+      );
+    });
+  },
+  getNationalContests: function () {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM nationalcontests ORDER BY id DESC",
         (err, result) => {
           if (err) reject(err);
           else resolve(result);

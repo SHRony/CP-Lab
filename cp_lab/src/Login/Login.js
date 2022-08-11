@@ -68,7 +68,7 @@ class Login extends Component {
             </h2>
             <p>Don't have an account?</p>
             <a href="/registration">
-              <WavyText>login</WavyText>
+              <WavyText>Sign Up</WavyText>
             </a>
           </div>
           <div className="form-rht">

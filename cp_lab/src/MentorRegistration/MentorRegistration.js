@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Form from "../res/Form/Form";
 import WavyText from "../res/WavyText/WavyText";
-import "./Registration.css";
+import "./MentorRegistration.css";
 import Axios from "axios";
 import { storeData, getData, alphanumeric, isLoggedIn } from "../helper";
 import { Navigate } from "react-router-dom";
-class Registratration extends Component {
+class MentorRegistration extends Component {
   constructor(props) {
     super(props);
     this.usernameInp = React.createRef();
@@ -14,7 +14,6 @@ class Registratration extends Component {
     this.cpasswordInp = React.createRef();
     this.emailInp = React.createRef();
     this.phoneInp = React.createRef();
-    this.regInp = React.createRef();
     this.state = { isLoggedIn: 0 };
   }
   checkUsername = () => {
@@ -110,28 +109,27 @@ class Registratration extends Component {
     return this.phoneInp.current.checkValidity();
   };
 
-  checkReg = () => {
-    this.regInp.current.reportValidity();
-    return this.regInp.current.checkValidity();
-  };
-
   regreq = (user) => {
     console.log("requested");
-    Axios.post("http://localhost:3001/registration", user).then((response) => {
-      console.log(response.data);
-      if (response.data === 1) {
-        this.usernameInp.current.setCustomValidity("User name already exists");
-        this.usernameInp.current.reportValidity();
-      } else if (response.data === 2) {
-        this.emailInp.current.setCustomValidity("Email already exists");
-        this.emailInp.current.reportValidity();
-      } else if (response.data === 3) {
-        alert("Error connecting database, try again");
-      } else {
-        storeData("current_user", response.data);
-        window.location.reload(false);
+    Axios.post("http://localhost:3001/registration/admin", user).then(
+      (response) => {
+        console.log(response.data);
+        if (response.data === 1) {
+          this.usernameInp.current.setCustomValidity(
+            "User name already exists"
+          );
+          this.usernameInp.current.reportValidity();
+        } else if (response.data === 2) {
+          this.emailInp.current.setCustomValidity("Email already exists");
+          this.emailInp.current.reportValidity();
+        } else if (response.data === 3) {
+          alert("Error connecting database, try again");
+        } else {
+          storeData("current_user", response.data);
+          window.location.reload(false);
+        }
       }
-    });
+    );
   };
   componentDidMount() {
     isLoggedIn().then((res) => {
@@ -152,7 +150,6 @@ class Registratration extends Component {
     if (!this.checkName()) return;
     if (!this.checkEmail()) return;
     if (!this.checkPhone()) return;
-    if (!this.checkReg()) return;
     if (!this.checkPassword()) return;
     if (!this.checkCpassword()) return;
 
@@ -162,7 +159,6 @@ class Registratration extends Component {
       email: this.emailInp.current.value,
       phone: this.phoneInp.current.value,
       password: this.passwordInp.current.value,
-      reg: this.regInp.current.value,
     };
     this.regreq(user);
   };
@@ -226,17 +222,6 @@ class Registratration extends Component {
             <span></span>
             <input
               className="inp"
-              name="regNo"
-              placeholder="Registration Number"
-              type="number"
-              required
-              pattern="[0-9]{10}"
-              ref={this.regInp}
-              onChange={this.checkReg}
-            />
-            <span></span>
-            <input
-              className="inp"
               name="password"
               type="password"
               placeholder="password"
@@ -268,4 +253,4 @@ class Registratration extends Component {
     return content;
   }
 }
-export default Registratration;
+export default MentorRegistration;

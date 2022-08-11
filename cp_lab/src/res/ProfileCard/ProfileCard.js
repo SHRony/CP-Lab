@@ -57,9 +57,13 @@ class ProfileCard extends Component {
             <div className="profile-card-info">
               Full Name : {this.props.user.name}
             </div>
-            <div className="profile-card-info">
-              Registratin No : {this.props.user.reg}
-            </div>
+            {this.props.user.userType === 0 ? (
+              <div className="profile-card-info">
+                Registratin No : {this.props.user.reg}
+              </div>
+            ) : (
+              ""
+            )}
             <div className="profile-card-info">
               Email : {this.props.user.email}
             </div>

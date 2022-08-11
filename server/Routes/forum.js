@@ -137,7 +137,7 @@ router.post("/getChildlComments", async (req, res) => {
     })
     .catch((err) => res.send(err));
 });
-router.post("/getChidlReplies", async (req, res) => {
+router.post("/getChildlReplies", async (req, res) => {
   let par = req.body.par;
 
   queries
