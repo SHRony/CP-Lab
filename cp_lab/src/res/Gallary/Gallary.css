@@ -51,12 +51,14 @@
   border-collapse: collapse;
   transform: scale(1, 1);
   transition: 0.3s ease;
+  object-fit: contain;
 }
 .sec img {
-  animation-duration: 60s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: ease-out;
+  height: 100%;
 }
 
 .sec-1 {

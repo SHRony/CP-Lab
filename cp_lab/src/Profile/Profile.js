@@ -9,6 +9,7 @@ class Profile extends Component {
     super(props);
     let url = new URL(window.location.href);
     let user = url.searchParams.get("username");
+    console.log(user);
     this.state = {
       urlUser: user,
       //0 means not decided, 1 means logged in, -1 means not logged in
@@ -68,6 +69,7 @@ class Profile extends Component {
         };
         if (this.state.urlUser !== null) {
           //Username provided in url
+          console.log("url user is " + this.state.urlUser);
           getUser(this.state.urlUser)
             .then((result) => {
               console.log(result);
@@ -88,7 +90,6 @@ class Profile extends Component {
           tmpstate.isOwn = 1;
           getUser(res.userName)
             .then((result) => {
-              console.log(result);
               if (result === 1) {
                 tmpstate.error = 1;
               } else if (result === 3) {
@@ -96,9 +97,7 @@ class Profile extends Component {
               } else {
                 tmpstate.user = result;
               }
-              this.setState(tmpstate, () => {
-                console.log(this.state);
-              });
+              this.setState(tmpstate);
             })
             .catch(() => {
               tmpstate.error = 2;
@@ -110,7 +109,6 @@ class Profile extends Component {
   }
   render() {
     let content = "";
-    console.log(this.state);
     if (this.state.error === 1)
       content = (
         <div className="Profile">

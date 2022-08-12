@@ -43,10 +43,6 @@ class Nav extends Component {
           <a className="btn" href="/profile">
             <img src={profile_icon} />
           </a>{" "}
-          {/* Onclick temporary for testing purpose */}
-          <a className="btn" href="#">
-            <img src={notification_icon} />
-          </a>
           <a className="btn" href="#" onClick={this.logoutreq}>
             <img src={logout_icon} />
           </a>
@@ -69,13 +65,13 @@ class Nav extends Component {
           <a className="btn" href="/">
             <img src={logo}></img>
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="contests">
             <WavyText>Contests</WavyText>
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="users">
             <WavyText>Users</WavyText>
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="forum">
             <WavyText>Forum</WavyText>
           </a>
           <a className="btn" href="cfviz">

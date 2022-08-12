@@ -43,7 +43,6 @@ export async function isLoggedIn() {
 //Returns 1 if user not defined or null
 //Returns 3 if database error occurs
 export async function getUser(username) {
-  console.log(username);
   if (username === null || username === undefined) return 1;
   else
     return await Axios.post("http://localhost:3001/api/getUser", {
@@ -117,6 +116,44 @@ export async function addNationalContest(name, time) {
     token: getData("current_user"),
     name: name,
     time: time,
+  }).then((response) => response.data);
+}
+export async function createTeam(
+  name,
+  member1,
+  member2,
+  member3,
+  coach,
+  contest
+) {
+  return await Axios.post("http://localhost:3001/contests/createTeam", {
+    token: getData("current_user"),
+    name: name,
+    member1: member1,
+    member2: member2,
+    member3: member3,
+    coach: coach,
+    contest: contest,
+  }).then((response) => response.data);
+}
+export async function getTeams(contest) {
+  return await Axios.post("http://localhost:3001/contests/getTeams", {
+    contest: contest,
+  }).then((response) => response.data);
+}
+
+export async function getPracticeContests(contest) {
+  return await Axios.post(
+    "http://localhost:3001/contests/getPracticeContests",
+    { contest: contest }
+  ).then((response) => response.data);
+}
+export async function addPracticeContest(name, contest, link) {
+  return await Axios.post("http://localhost:3001/contests/addPracticeContest", {
+    token: getData("current_user"),
+    name: name,
+    contest: contest,
+    link: link,
   }).then((response) => response.data);
 }
 

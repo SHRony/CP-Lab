@@ -1,4 +1,4 @@
-.CreateContest {
+.AddTeam {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   border-radius: 5px;
   z-index: 1;
 }
-.CreateContest::after {
+.AddTeam::after {
   content: "";
   position: absolute;
   width: 130px;
@@ -27,7 +27,7 @@
   border-bottom-right-radius: 100%;
   border-top-left-radius: 5px;
 }
-.CreateContest::before {
+.AddTeam::before {
   content: "";
   position: absolute;
   width: 200px;
@@ -39,27 +39,27 @@
   border-top-left-radius: 100%;
   border-bottom-right-radius: 5px;
 }
-.contestInpContainer {
+.TeamInpContainer {
   display: block;
   width: calc(100% - 100px);
   max-width: 800px;
   margin-top: 50px;
 }
-.contestInpContainer input {
+.TeamInpContainer input {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid rgb(115, 64, 255);
   background-color: rgb(241, 241, 241);
 }
-.contestInpContainer input:focus {
+.TeamInpContainer input:focus {
   outline: none;
 }
-.contestInpContainer div {
+.TeamInpContainer div {
   font-family: serif;
   font-size: 24px;
 }
-.createContestBtn {
+.createTeamBtn {
   display: flex;
   color: #fff;
   width: fit-content;

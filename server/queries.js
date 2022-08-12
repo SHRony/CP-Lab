@@ -284,4 +284,52 @@ module.exports = {
       );
     });
   },
+  createTeam: function (name, member1, member2, member3, coach, parent) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO teams (name,member1,member2,member3,coach,contest) VALUES (? , ?, ?, ?, ?, ?)",
+        [name, member1, member2, member3, coach, parent],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
+  getTeams: function (contest) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM teams WHERE contest = ? ORDER BY id DESC",
+        [contest],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
+  addPracticeContest: function (name, parentcontest, link) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO practicecontests (name,nationalcontest,link) VALUES (? , ?, ?)",
+        [name, parentcontest, link],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
+  getPracticeContests: function (contest) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM practicecontests WHERE nationalcontest = ? ORDER BY id DESC",
+        [contest],
+        (err, result) => {
+          if (err) reject(err);
+          else resolve(result);
+        }
+      );
+    });
+  },
 };
