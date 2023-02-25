@@ -1,3 +1,10 @@
+:root {
+  --primary: #AE62E7;
+  --secondary: #95D5B6;
+  --tertiary: #BE78F0;
+  --shade: #E5B9FD;
+  --text: #22285E;
+}
 .PostListItem {
   margin: 20px;
   display: flex;
@@ -6,17 +13,15 @@
   border-top-right-radius: 8px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-
-  filter: drop-shadow(0.35rem 0.35rem 0.25rem rgba(80, 121, 255, 0.555));
   margin-left: 50px;
   margin-right: 50px;
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .PostListTitle a {
-  color: rgb(83, 158, 255);
+  color: var(--text);
   text-decoration: none;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: Arial;
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
@@ -24,8 +29,10 @@
   line-height: 26.4px;
 }
 .PostListTitle {
+  background-color: #f4ebfa;
   padding: 20px;
-  background-color: rgba(102, 138, 255, 0.05);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .PostListBottom {
@@ -60,5 +67,5 @@
 .PostTitleAuthor a {
   text-decoration: none;
   margin-left: 5px;
-  color: rgb(83, 158, 255);
+  color: var(--primary);
 }

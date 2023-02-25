@@ -7,6 +7,8 @@ import BorderAnimation from "../res/BorderAnimation/BorderAnimation";
 import FadeScroll from "../res/FadeScroll/FadeScroll";
 import Gallary from "../res/Gallary/Gallary";
 import CFstat from "../res/CFStat/CFStat";
+import illustration from "../Image/home_illustration.svg";
+import HomeMenu from "../res/HomeMenu/HomeMenu";
 class Home extends Component {
   render() {
     return (
@@ -21,9 +23,13 @@ class Home extends Component {
               </BorderAnimation>
             </div>
             <div className="welcome-rht">
-              <Gallary></Gallary>
+              {/* <Gallary></Gallary> */}
+              <img src={illustration}></img>
             </div>
           </div>
+        </div>
+        <div className="home-menu-wrapper">
+          <FadeScroll><HomeMenu></HomeMenu></FadeScroll>
         </div>
       </div>
     );

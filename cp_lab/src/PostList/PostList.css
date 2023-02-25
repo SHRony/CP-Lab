@@ -1,3 +1,10 @@
+:root {
+  --primary: #AE62E7;
+  --secondary: #95D5B6;
+  --tertiary: #BE78F0;
+  --shade: #E5B9FD;
+  --text: #22285E;
+}
 .PostListHeader {
   display: flex;
   flex-direction: row;
@@ -16,7 +23,7 @@
   padding-left: 3px;
   padding-right: 3px;
   border-radius: 4px;
-  background-color: rgba(23, 28, 70, 0.541);
+  background-color: var(--primary);
   text-align: center;
   flex-direction: row;
   justify-content: center;
@@ -24,6 +31,7 @@
   cursor: pointer;
   height: 32px;
   box-shadow: 5px 4px 17px -4px rgba(0, 0, 0, 0.75);
-  border: 1px solid #fff;
   text-decoration: none;
+  padding:5px;
+  min-width: 150px;
 }

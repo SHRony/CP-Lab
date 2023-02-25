@@ -5,6 +5,7 @@ import "./Registration.css";
 import Axios from "axios";
 import { storeData, getData, alphanumeric, isLoggedIn } from "../helper";
 import { Navigate } from "react-router-dom";
+import logo from "../Image/color_logo.svg"
 class Registratration extends Component {
   constructor(props) {
     super(props);
@@ -171,20 +172,9 @@ class Registratration extends Component {
     let content = (
       <div className="Registration">
         <Form>
-          <div className="form-lft">
-            <h2>
-              <WavyText>Welcome to</WavyText>
-            </h2>
-            <h2>
-              <WavyText>CP Lab</WavyText>
-            </h2>
-            <p>Already have an account?</p>
-            <a href="/login">
-              <WavyText>login</WavyText>
-            </a>
-          </div>
           <div className="form-rht">
-            <h3>Registration</h3>
+            <div className="form-logo"><img src={logo}></img></div>
+            <div className="form-heading">Registration</div>
             <input
               className="inp"
               name="username"
@@ -259,7 +249,9 @@ class Registratration extends Component {
                 Create Account
               </div>
             </div>
+            <div className="form-alternate">already have an Account? <a href="login">Login</a></div>
           </div>
+          
         </Form>
       </div>
     );

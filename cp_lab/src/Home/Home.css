@@ -1,3 +1,20 @@
+:root {
+    --primary: #AE62E7;
+    --secondary: #95D5B6;
+    --tertiary: #BE78F0;
+    --shade: #E5B9FD;
+    --text: #22285E;
+}
+
+
+
+
+.Home{
+    color: var(--text);
+    background-image: url("../Image/landing_bg.svg");
+    background-repeat: no-repeat;
+    
+}
 .welcome-wrapper{
     height: calc(100vh - 70px);
     width: 100%;
@@ -6,7 +23,7 @@
     align-items: center;
 }
 .welcome{
-    background-color: rgba(255, 255, 255, 0.548);
+    background-color: rgba(255, 255, 255, 0.25);
     height: calc(100% - 100px);
     width: calc(100% - 100px);
     display: flex;
@@ -19,28 +36,7 @@
     justify-content: center;
     backdrop-filter: blur(8px);
     border-radius: 8px;
-}
-.welcome-wrapper::after{
-    bottom : 0;
-    right: 0;
-    content: '';
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background-color: #325FFF;
-    z-index: -1;
-    border-top-left-radius: 300%;
-}
-.welcome-wrapper::before{
-    top : 0;
-    left: 0;
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background-color: #325FFF;
-    z-index: -1;
-    border-bottom-right-radius: 300%;
+    box-shadow: inset 5px 5px 5px rgba(255, 255, 255, 0.5);
 }
 
 .welcome-lft{ 
@@ -60,7 +56,6 @@
     align-items: center;
 }
 .welcome-rht img{
-    max-height: 400px;
 }
 
 .CP{
@@ -69,8 +64,21 @@
 }
 .Lab{
     font-size: 35px;
-    color: #325FFF;
+    color: var(--primary);
 }
+
+
+
+
+.home-menu-wrapper{
+    width: calc(100% - 100px);
+    padding: 50px;
+    margin-top: 100px;
+}
+
+
+
+
 
 
 .upcoming_contest{
