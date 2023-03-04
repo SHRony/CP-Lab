@@ -1,0 +1,76 @@
+.rec-item{
+    border-radius: 10px;
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.rec-rht{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    padding: 15px;
+    text-decoration: none;
+    
+
+}
+
+.rec-lft{
+    width: 180px;
+    height: 31px;
+    background-color: var(--shade);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding:10px;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.rec-lft span{
+    width: 4px;
+    background-color: white;
+    margin: 1px;
+    border:1px solid white;
+}
+.rec-lft span:nth-child(1){
+    height: 5px;
+}
+.rec-lft span:nth-child(2){
+    height: 10px;
+}
+.rec-lft span:nth-child(3){
+    height: 14px;
+}
+.rec-lft span:nth-child(4){
+    height: 18px;
+}
+.rec-lft span:nth-child(5){
+    height: 22px;
+}
+.rec-lft span:nth-child(6){
+    height: 26px;
+}
+.dif-1 span:nth-child(6),.dif-2 span:nth-child(6),.dif-3 span:nth-child(6),.dif-4 span:nth-child(6),.dif-5 span:nth-child(6){
+    background-color: var(--shade);
+}
+.dif-1 span:nth-child(5),.dif-2 span:nth-child(5),.dif-3 span:nth-child(5),.dif-4 span:nth-child(5){
+    background-color: var(--shade);
+}
+.dif-1 span:nth-child(4),.dif-2 span:nth-child(4),.dif-3 span:nth-child(4){
+    background-color: var(--shade);
+}
+.dif-1 span:nth-child(3),.dif-2 span:nth-child(3){
+    background-color: var(--shade);
+}
+.dif-1 span:nth-child(2){
+    background-color: var(--shade);
+}

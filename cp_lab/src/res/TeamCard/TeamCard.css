@@ -1,11 +1,11 @@
 .TeamCard {
   width: 400px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;;
   margin: 20px;
 }
 .TeamName {
   width: 100%;
-  background-color: rgb(29, 28, 65);
+  background-color: var(--tertiary);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   min-height: 40px;

@@ -10,17 +10,17 @@
   width: calc(100% - 100px);
   position: relative;
   background-color: #ffffffb0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   backdrop-filter: blur(8px);
   border-radius: 5px;
   z-index: 1;
 }
-.AddPracticeContest::after {
+/* .AddPracticeContest::after {
   content: "";
   position: absolute;
   width: 130px;
   height: 130px;
-  background-color: #325eff7a;
+  background-color: var(--shade);
   z-index: -1;
   top: 0;
   left: 0;
@@ -32,13 +32,13 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  background-color: #325eff7a;
+  background-color: var(--shade);
   z-index: -1;
   bottom: 0;
   right: 0;
   border-top-left-radius: 100%;
   border-bottom-right-radius: 5px;
-}
+} */
 .contestInpContainer {
   display: block;
   width: calc(100% - 100px);
@@ -73,7 +73,7 @@
   align-items: center;
   cursor: pointer;
   height: 32px;
-  box-shadow: 5px 4px 17px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   border: 1px solid #fff;
   min-width: 50px;
   margin: 100px;

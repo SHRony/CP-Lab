@@ -1,3 +1,10 @@
+:root {
+  --primary: #AE62E7;
+  --secondary: #95D5B6;
+  --tertiary: #BE78F0;
+  --shade: #E5B9FD;
+  --text: #22285E;
+}
 .CFStat {
   display: flex;
   flex-direction: column;
@@ -34,7 +41,7 @@
   position: absolute;
   width: 130px;
   height: 130px;
-  background-color: #325fff;
+  background-color: var(--shade);
   z-index: -1;
   top: 0;
   left: 0;
@@ -47,7 +54,7 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  background-color: #325fff;
+  background-color: var(--shade);
   z-index: -1;
   bottom: 0;
   right: 0;

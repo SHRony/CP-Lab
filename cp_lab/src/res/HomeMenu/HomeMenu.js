@@ -37,41 +37,41 @@ class HomeMenu extends Component {
             </div>
         </div>
         <div className="home-menu-rht">
-            <div className="home-menu-btn">
+            <a className="home-menu-btn" href="recommender">
                 <div className = "menu-btn-text">Problem Recommendation</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
                     <div className="home-menu-rect"><img src={recomendation_icon}></img></div>
                 </div>
-            </div>
-            <div className="home-menu-btn">
-                <div className = "menu-btn-text">CF Visualization</div>
+            </a>
+            <a className="home-menu-btn" href="cfviz"> 
+                <div className = "menu-btn-text" >CF Visualization</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
                     <div className="home-menu-rect"><img src={cfviz_icon}></img></div>
                 </div>
-            </div>
-            <div className="home-menu-btn">
+            </a>
+            <a className="home-menu-btn" href="contests">
                 <div className = "menu-btn-text">Contests</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
                     <div className="home-menu-rect"><img src={contests_icon}></img></div>
                 </div>
-            </div>
-            <div className="home-menu-btn">
+            </a>
+            <a className="home-menu-btn" href="forum">
                 <div className = "menu-btn-text">Forum</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
                     <div className="home-menu-rect"><img src={forum_icon}></img></div>
                 </div>
-            </div>
-            <div className="home-menu-btn">
+            </a>
+            <a className="home-menu-btn" href="users">
                 <div className = "menu-btn-text">Users</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
                     <div className="home-menu-rect"><img src={users_icon}></img></div>
                 </div>
-            </div>
+            </a>
         </div>
 
       </div>

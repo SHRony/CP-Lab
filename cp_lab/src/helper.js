@@ -177,3 +177,7 @@ export function timeSince(time) {
   dif = Math.round(dif / 360);
   return dif + " years ago";
 }
+export async function fetchRecommendations(userfeatures){
+  // http://localhost:5000/
+  return await Axios.get("http://localhost:5000?userfeatures="+JSON.stringify(userfeatures)).then((response) => response.data);
+}

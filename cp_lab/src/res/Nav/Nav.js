@@ -77,6 +77,9 @@ class Nav extends Component {
           <a className="btn" href="cfviz">
             <WavyText>CFViz</WavyText>
           </a>
+          <a className="btn" href="recommender">
+            <WavyText>Recommender</WavyText>
+          </a>
         </div>
         {rht}
       </div>

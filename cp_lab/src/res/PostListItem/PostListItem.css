@@ -29,7 +29,7 @@
   line-height: 26.4px;
 }
 .PostListTitle {
-  background-color: #f4ebfa;
+  background-color: #ffffff;
   padding: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -50,6 +50,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: var(--secondary);
 }
 .PostListTime img {
   height: 20px;

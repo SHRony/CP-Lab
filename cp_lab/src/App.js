@@ -14,6 +14,7 @@ import Post from "./Post/Post";
 import ContestList from "./ContestList/ContestList";
 import Users from "./Users/Users";
 import Contest from "./Contest/Contest";
+import Recommender from "./Recommender/Recommender";
 class App extends Component {
   render() {
     return (
@@ -39,6 +40,7 @@ class App extends Component {
             <Route path="/contests" element={<ContestList></ContestList>} />
             <Route path="/users" element={<Users></Users>} />
             <Route path="/contest" element={<Contest></Contest>} />
+            <Route path="/recommender" element={<Recommender></Recommender>} />
           </Routes>
         </div>
       </BrowserRouter>
