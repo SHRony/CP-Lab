@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import RecommenderCard from "../res/RecommenderCard/RecommenderCard";
 import "./Recommender.css"
+import logo from "../Image/color_logo.svg"
 class Recommender extends Component{
     constructor(props){
         super(props);
         this.inpRef = React.createRef();
         this.state = {
-            handles : [],
+            handles : ['Raiden'],
+            inpVal : "Raiden",
         }
     }
     submit = () => {
@@ -14,16 +16,19 @@ class Recommender extends Component{
         this.setState({
             handles : this.inpRef.current.value.split(",")
         })
-        console.log(this.state);
     }
     render(){
         return (
             <div className="Recommender">
                 <div className="Recommender-top">
-                    <input type="text" ref={this.inpRef}></input>
-                    <div onClick={this.submit}>submit</div>
+                    <div className="logo-container">
+                        <img src={logo} className = "logo"></img>
+                    </div>
+                    <div className="Recommender-top-content">
+                        <input type="text" ref={this.inpRef} value={this.state.inpVal} onChange={(e) => {this.setState({inpVal: e.target.value})}}></input>
+                        <div onClick={this.submit}>submit</div>
+                    </div>
                 </div>
-                {/* <RecommenderCard handles = {['Raiden']}></RecommenderCard> */}
                 <RecommenderCard handles = {this.state.handles}></RecommenderCard>
             </div>
         )

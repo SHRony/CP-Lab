@@ -8,6 +8,7 @@ import FadeScroll from "../FadeScroll/FadeScroll";
 import WavyText from "../WavyText/WavyText";
 import BarChart from "../Charts/BarChart/BarChart";
 import ScatterChart from "../Charts/ScatterChart/ScatterChart";
+import Spinner from "../Spinner/Spinner";
 
 class CFstat extends Component {
   constructor(props) {
@@ -66,6 +67,7 @@ class CFstat extends Component {
         "rgba(255, 159, 64, 1)",
       ],
     };
+    this.setState(data);
     let st = new Map();
     for (let i = 0; i < this.props.handles.length; i++) {
       let handle = this.props.handles[i];
@@ -269,6 +271,14 @@ class CFstat extends Component {
   };
 
   render() {
+    if(this.state.submissions.length < 1){
+      return (
+        <div className="CFStat loader-container">
+          <Spinner></Spinner>
+        </div>
+        
+      );
+    }
     return (
       <div className="CFStat">
         <FadeScroll>

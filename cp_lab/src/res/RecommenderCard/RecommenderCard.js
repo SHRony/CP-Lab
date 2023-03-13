@@ -9,6 +9,7 @@ import WavyText from "../WavyText/WavyText";
 import BarChart from "../Charts/BarChart/BarChart";
 import ScatterChart from "../Charts/ScatterChart/ScatterChart";
 import { fetchRecommendations } from "../../helper";
+import Spinner from "../Spinner/Spinner";
 let taglist = [
     "*special",
     800,
@@ -97,6 +98,7 @@ class RecommenderCard extends Component {
       tagCount: new Map(),
       recommendations: [],
     };
+    this.setState(data);
     let st = new Map();
     for (let i = 0; i < this.props.handles.length; i++) {
       let handle = this.props.handles[i];
@@ -212,6 +214,14 @@ class RecommenderCard extends Component {
     return "https://codeforces.com/contest/"+cid+"/problem/"+pidx;
   }
   render() {
+    if(this.state.recommendations.length < 1){
+      return (
+        <div className="RecommenderCard loader-container">
+          <Spinner></Spinner>
+        </div>
+        
+      );
+    }
     return (
       <div className="RecommenderCard">
          

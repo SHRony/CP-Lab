@@ -3,9 +3,9 @@
 }
 
 .PostTitle {
-  color: rgb(83, 158, 255);
+  color: var(--primary);
   text-decoration: none;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: Arial;
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
@@ -14,7 +14,9 @@
   cursor: pointer;
 }
 .PostContent {
-  margin: 15px;
+  margin-top: 15px;
+  padding: 15px;
+  box-shadow: rgba(175, 175, 175, 0.2) 0px 2px 8px 0px;
 }
 
 .bottomBar {
@@ -51,7 +53,7 @@
 .PostAuthor a {
   text-decoration: none;
   margin-left: 5px;
-  color: rgb(83, 158, 255);
+  color: var(--primary);
 }
 .WriteComment {
   margin: 100px;
@@ -66,21 +68,25 @@
   width: calc(90% - 150px);
 }
 .commentButton {
-  display: flex;
+    border:1px solid var(--primary);
+    font-weight: 500;
+    color: var(--primary);
+    border-radius: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.commentButton:hover{
+  background-color: var(--primary);
   color: #fff;
-  width: fit-content;
-  padding-left: 3px;
-  padding-right: 3px;
-  border-radius: 4px;
-  background-color: rgba(23, 28, 70, 0.541);
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  height: 32px;
-  box-shadow: 5px 4px 17px -4px rgba(0, 0, 0, 0.75);
-  border: 1px solid #fff;
-  min-width: 50px;
-  margin: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.commentButton:active{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 9px;
+  transform:scale(0.95);
 }

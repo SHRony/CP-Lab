@@ -74,3 +74,10 @@
 .dif-1 span:nth-child(2){
     background-color: var(--shade);
 }
+.loader-container{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

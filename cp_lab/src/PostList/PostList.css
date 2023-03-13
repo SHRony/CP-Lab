@@ -15,23 +15,33 @@
 .RecentPosts {
   font-family: serif;
   font-size: 30px;
+  color: var(--primary);
 }
 .NewPostBtn {
   display: flex;
-  color: #fff;
+  border:1px solid var(--primary);
+  font-weight: 500;
+  color: var(--primary);
   width: fit-content;
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 4px;
-  background-color: var(--primary);
+  border-radius: 25px;
   text-align: center;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   height: 32px;
-  box-shadow: 5px 4px 17px -4px rgba(0, 0, 0, 0.75);
   text-decoration: none;
   padding:5px;
   min-width: 150px;
+}
+.NewPostBtn:hover{
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.NewPostBtn:active{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 9px;
+  transform:scale(0.95);
 }

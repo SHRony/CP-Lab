@@ -46,35 +46,43 @@
   margin-top: 50px;
 }
 .contestInpContainer input {
+  color: var(--primary);
   width: 100%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid rgb(115, 64, 255);
-  background-color: rgb(241, 241, 241);
+  padding: 7px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  outline: none;
+  background-color: transparent;
 }
 .contestInpContainer input:focus {
-  outline: none;
+  border-color: var(--secondary);
 }
 .contestInpContainer div {
   font-family: serif;
   font-size: 24px;
 }
 .createContestBtn {
+  border:1px solid var(--primary);
+  font-weight: 500;
+  color: var(--primary);
+  border-radius: 20px;
+  width: 100px;
   display: flex;
-  color: #fff;
-  width: fit-content;
-  padding-left: 3px;
-  padding-right: 3px;
-  border-radius: 4px;
-  background-color: rgba(23, 28, 70, 0.541);
-  text-align: center;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 35px;
+  text-align: center;
   cursor: pointer;
-  height: 32px;
-  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-  border: 1px solid #fff;
-  min-width: 50px;
-  margin: 100px;
+  margin-left: 15px;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
+}
+.createContestBtn:hover{
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.createContestBtn:active{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 9px;
+  transform:scale(0.95);
 }

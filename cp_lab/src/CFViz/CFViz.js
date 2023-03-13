@@ -6,7 +6,8 @@ class CFViz extends Component{
         super(props);
         this.inpRef = React.createRef();
         this.state = {
-            handles : [],
+            handles : ['Raiden'],
+            inpVal : "Raiden",
         }
     }
     submit = () => {
@@ -20,7 +21,7 @@ class CFViz extends Component{
         return (
             <div className="CFViz">
                 <div className="CFViz-top">
-                    <input type="text" ref={this.inpRef}></input>
+                    <input type="text" ref={this.inpRef} value={this.state.inpVal} onChange={(e) => {this.setState({inpVal: e.target.value})}}></input>
                     <div onClick={this.submit}>submit</div>
                 </div>
                 <CFstat handles = {this.state.handles}></CFstat>
