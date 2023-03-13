@@ -21,7 +21,12 @@ class ContestList extends Component {
     };
   }
   addContest = (name, date) => {
-    addNationalContest(name, date);
+    addNationalContest(name, date).then(() => {
+      window.location.reload(false);
+    })
+    .catch(() => {
+      window.location.reload(false);
+    });
   };
   componentDidMount() {
     isLoggedIn().then((res) => {

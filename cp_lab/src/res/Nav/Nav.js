@@ -3,7 +3,7 @@ import { Component } from "react";
 import logo from "../../Image/logo.svg";
 import notification_icon from "../../Image/notification.svg";
 import profile_icon from "../../Image/profile.svg";
-import logout_icon from "../../Image/logout.png";
+import logout_icon from "../../Image/logout_white.png";
 import WavyText from "../WavyText/WavyText";
 import "./Nav.css";
 import Axios from "axios";
