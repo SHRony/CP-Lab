@@ -7,7 +7,7 @@ require("dotenv").config();
 const db = mysql.createConnection({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
-  password: "",
+  password: process.env.DP_PASSWORD,
   database: process.env.DB_NAME,
 });
 router.post("/", (req, res) => {
