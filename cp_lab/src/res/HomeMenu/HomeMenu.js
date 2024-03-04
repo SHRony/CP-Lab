@@ -41,35 +41,35 @@ class HomeMenu extends Component {
                 <div className = "menu-btn-text">Problem Recommendation</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
-                    <div className="home-menu-rect"><img src={recomendation_icon}></img></div>
+                    <div className="home-menu-rect"><div className="home-logo-container"><img src={recomendation_icon}></img></div></div>
                 </div>
             </a>
             <a className="home-menu-btn" href="cfviz"> 
                 <div className = "menu-btn-text" >CF Visualization</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
-                    <div className="home-menu-rect"><img src={cfviz_icon}></img></div>
+                    <div className="home-menu-rect"><div className="home-logo-container"><img src={cfviz_icon}></img></div></div>
                 </div>
             </a>
             <a className="home-menu-btn" href="contests">
                 <div className = "menu-btn-text">Contests</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
-                    <div className="home-menu-rect"><img src={contests_icon}></img></div>
+                    <div className="home-menu-rect"><div className="home-logo-container"><img src={contests_icon}></img></div></div>
                 </div>
             </a>
             <a className="home-menu-btn" href="forum">
                 <div className = "menu-btn-text">Forum</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
-                    <div className="home-menu-rect"><img src={forum_icon}></img></div>
+                    <div className="home-menu-rect"><div className="home-logo-container"><img src={forum_icon}></img></div></div>
                 </div>
             </a>
             <a className="home-menu-btn" href="users">
                 <div className = "menu-btn-text">Users</div>
                 <div className="home-menu-icon-container">
                     <img className="home-menu-bg" src={triangle}></img>
-                    <div className="home-menu-rect"><img src={users_icon}></img></div>
+                    <div className="home-menu-rect"><div className="home-logo-container"><img src={users_icon}></img></div></div>
                 </div>
             </a>
         </div>

@@ -1,0 +1,11 @@
+:root {
+    --primary: #1b4965;
+    --secondary: #5fa8d3;
+    --tertiary: #bee9e8;
+    --shade: #d5e1e9;
+    --text: #5e6472;
+    --text-shade : #e7e7e7;
+}
+.{
+    color: var(--text);
+}

@@ -1,3 +1,4 @@
+@import url("../../Styles/theme.css");
 .rec-item{
     border-radius: 10px;
     width: calc(100% - 100px);

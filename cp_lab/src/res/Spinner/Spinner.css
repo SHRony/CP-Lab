@@ -1,3 +1,4 @@
+@import url("../../Styles/theme.css");
 .Spinner{
     display: flex;
     min-height: max-content;

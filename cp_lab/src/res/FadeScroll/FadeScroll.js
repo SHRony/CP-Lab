@@ -11,9 +11,11 @@ class FadeScroll extends Component{
     componentDidMount(){
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
+            let visibility = entry.isIntersecting | this.state.isVisible;
+            console.log(this.state.isVisible);
             this.setState({
                 // isVisible :  (this.state.isVisible? this.state.isVisible : entry.isIntersecting)
-                isVisible : entry.isIntersecting
+                isVisible : visibility
             })
         } , [])
         observer.observe(this.myRef.current);

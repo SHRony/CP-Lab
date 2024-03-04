@@ -23,8 +23,8 @@ class Home extends Component {
               </BorderAnimation>
             </div>
             <div className="welcome-rht">
-              {/* <Gallary></Gallary> */}
-              <img src={illustration}></img>
+              <Gallary></Gallary>
+              {/* <img src={illustration}></img> */}
             </div>
           </div>
         </div>

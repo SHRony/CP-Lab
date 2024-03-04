@@ -1,10 +1,4 @@
-:root {
-    --primary: #AE62E7;
-    --secondary: #95D5B6;
-    --tertiary: #BE78F0;
-    --shade: #E5B9FD;
-    --text: #22285E;
-}
+@import url("../Styles/theme.css");
 .Recommender{
     display: flex;
     flex-direction: column;

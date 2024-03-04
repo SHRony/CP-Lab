@@ -1,21 +1,17 @@
-:root {
-    --primary: #AE62E7;
-    --secondary: #95D5B6;
-    --tertiary: #BE78F0;
-    --shade: #E5B9FD;
-    --text: #22285E;
-}
+@import url("../../Styles/theme.css");
 
 .Nav{
     z-index: -2px;
     background-color: var(--primary);
     height: fit-content;
+    min-height: 85px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 15px;
     padding-right: 15px;
     border-bottom: 1px solid silver;
+    align-items: center;
 }
 
 .lft{
@@ -50,11 +46,16 @@
     text-decoration: none;
     border-radius: 4px;
     transition-duration: 0.5s;
+    font-weight: bold;
+
 
 }
 .rht .btn img{
     height: 20px;
     width: 20px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
 }
 .btn::after{
     box-sizing: border-box;
@@ -70,7 +71,7 @@
     transition-duration: 0.5s;
 }
 .btn:hover{
-    background-color: var(--tertiary);
+    /* background-color: var(--tertiary); */
 }
 .btn:hover::after{
     visibility: unset;

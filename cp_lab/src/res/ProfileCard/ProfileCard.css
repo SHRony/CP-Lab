@@ -1,3 +1,4 @@
+@import url("../../Styles/theme.css");
 .ProfileCard {
   display: flex;
   flex-direction: row;
@@ -18,7 +19,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   width: 45%;
-  background-color: #ffffffb0;
+  /* background-color: #ffffffb0; */
   box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   backdrop-filter: blur(8px);
   border-radius: 5px;
@@ -29,8 +30,8 @@
 }
 .profile-card-userName {
   font-size: 30px;
-  color: #768fffb0;
-  text-shadow: 2px 2px #8161f546;
+  color: var(--text);
+  /* text-shadow: 2px 2px #8161f546; */
   cursor: pointer;
   margin: 15px;
 }
@@ -38,20 +39,20 @@
   font-size: 16px;
   margin: 10px;
   padding: 5px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   border-radius: 4px;
-  box-shadow: rgba(139, 139, 139, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(139, 139, 139, 0.35) 0px 5px 15px; */
 }
 .profile-card-info:nth-of-type(4n + 0) {
-  background-color: rgba(255, 99, 132, 0.2);
+  /* background-color: rgba(255, 99, 132, 0.2); */
 }
 .profile-card-info:nth-of-type(4n + 1) {
-  background-color: rgba(54, 162, 235, 0.2);
+  /* background-color: rgba(54, 162, 235, 0.2); */
 }
 
 .profile-card-info:nth-of-type(4n + 2) {
-  background-color: rgba(255, 206, 86, 0.2);
+  /* background-color: rgba(255, 206, 86, 0.2); */
 }
 .profile-card-info:nth-of-type(4n + 3) {
-  background-color: rgba(75, 192, 192, 0.2);
+  /* background-color: rgba(75, 192, 192, 0.2); */
 }

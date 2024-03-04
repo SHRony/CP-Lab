@@ -1,3 +1,4 @@
+@import url("../../Styles/theme.css");
 .TagHandle {
   display: grid;
   grid-auto-flow: row;
@@ -14,25 +15,31 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
-  border-radius: 3px;
+  background-color: var(--text-shade);
+  border-radius: 30px;
   margin: 5px;
-  height: 35px;
+  color: var(--text);
 }
 .TagText {
   display: inline;
   width: fit-content;
   padding: 5px;
+  margin-left: 7px;
 }
 .TagImg {
+  background-color: silver;
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   width: fit-content;
-  padding: 2px;
   justify-content: center;
   align-items: center;
+  margin: 2px;
+  margin-right: 5px;
+  padding: 1px;
 }
 .TagImg img {
+  height: 16px;
   object-fit: contain;
 }
 .TagInput {
@@ -41,31 +48,33 @@
   margin-top: auto;
   margin-bottom: auto;
   border: none;
-  background-color: rgba(54, 162, 235, 0.2);
-  border-bottom: 1px solid rgb(54, 163, 235);
   border-radius: 4px;
-  height: 35px;
+  height: 25px;
   width: 90px;
   padding-left: 5px;
   padding-right: 5px;
   border: none;
   outline: none;
-  border-radius: 5px;
-  background-color: #f6e6ff;
+  border-radius: 4px;
   color: var(--text);
-  box-shadow: inset 0 0 10px #d3d3d3;
+  border: 1px solid silver;
+}
+.TagInput::placeholder{
+  color: var(--text);
 }
 .TagBtn {
-    background-color: var(--primary);
-    color: #fff;
+    background-color: var(--text-shade);
+    border: 1px solid var(--primary);
     border-radius: 5px;
+    color: var(--text);
     width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px;
+    height: 30px;
     text-align: center;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .TagInput:focus {
   outline: none;

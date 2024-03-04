@@ -1,10 +1,4 @@
-:root {
-    --primary: #AE62E7;
-    --secondary: #95D5B6;
-    --tertiary: #BE78F0;
-    --shade: #E5B9FD;
-    --text: #22285E;
-}
+@import url("../../Styles/theme.css");
 
 .HomeMenu{
     display: flex;
@@ -68,7 +62,7 @@
     flex-direction: row;
 }
 .home-menu-rect{
-    background-color: #CFA0F1;
+    background-color: var(--secondary);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     display: flex;
@@ -76,9 +70,20 @@
     justify-content: flex-end;
     align-items: center;
 }
+.home-logo-container{
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+    /* box-shadow: inset 5px 5px 10px #002332,inset -5px -5px 10px #004260; */
+    height: 64px;
+    width: 64px;
+    /* background-color: var(--primary); */
+}
 .home-menu-rect img{
+    
     width: 50px;
-    padding: 20px;
     margin-right: 10px;
 }
 .home-menu-btn:nth-of-type(1) .home-menu-rect{

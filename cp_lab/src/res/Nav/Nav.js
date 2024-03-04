@@ -66,19 +66,19 @@ class Nav extends Component {
             <img src={logo}></img>
           </a>
           <a className="btn" href="contests">
-            <WavyText>Contests</WavyText>
+            Contests
           </a>
           <a className="btn" href="users">
-            <WavyText>Users</WavyText>
+            Users
           </a>
           <a className="btn" href="forum">
-            <WavyText>Forum</WavyText>
+            Forum
           </a>
           <a className="btn" href="cfviz">
-            <WavyText>CFViz</WavyText>
+            CFViz
           </a>
           <a className="btn" href="recommender">
-            <WavyText>Recommender</WavyText>
+            Recommender
           </a>
         </div>
         {rht}
